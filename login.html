@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="icon" href="Assets/Images/logo.png">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>SirBrams Tech</title>
+
+     <style>
+    #carousel{
+      box-shadow:10px 8px 8px 10px #0a53be;
+    }
+    #h{
+        font-weight:bolder;
+    }
+    body{
+
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+       <a href="index.html">
+    <img src="Assets/Images/logo.png" alt="Logo">
+</a>
+
+    <div class="container-fluid container-xl position-relative d-flex align-items-center pb-2">
+
+
+     <nav id="navmenu" class="navmenu">
+         <a href="index.html" class="menu"> <h1>SirBrams Tech campus</h1></a>
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Courses.html">Courses</a>
+            <a href="events.html">Events</a>
+            <a href="learning.html">Learning</a>
+            <a href="contact.html">Contact</a>
+           <label for="search"class="text-success">Search</label>
+            <input id="search" type="text" placeholder="Search...">
+
+         <a href="Reg.html" class="btn btn-outline-success">Register </a>
+         <a href="login.html" class="btn btn-outline-primary active">Login</a>
+           </nav>
+        </div>
+    </header>
+
+<div class="container p-4 m-auto bg-info col-md-9 col-lg-6">
+
+  <form action="" method="post" class=" text-white">
+  <div class="container d-flex justify-content-center align-items-center">
+    <img src="Assets/Images/logo.png" alt="Logo" class="img-fluid">
+</div>
+    <h2 class="text-center">Login to SirBrams Tech Virtul Campus</h2>
+
+    <!-- Login Form -->
+    <form>
+        <!-- Email Input -->
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+        </div>
+
+        <!-- Password Input with Toggle Visibility -->
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <div class="input-group">
+                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="togglePassword" style="cursor: pointer;">👁️</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Forgot Password and Register Links -->
+        <div class="form-group d-flex justify-content-between">
+            <a href="forgot_password.html" class="text-danger">Forgot Password?</a>
+            <a href="Reg.html"class="text-success">Register</a>
+        </div>
+
+        <!-- Login As Options -->
+        <div class="form-group">
+            <label for="role">Login as:</label>
+            <select class="form-control" id="role">
+                <option value="student">Student</option>
+                <option value="instructor">Instructor</option>
+            </select>
+        </div>
+
+        <!-- Login Button -->
+        <div class=" d-grid pt-2">
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </div>
+    </form>
+   </div>
+
+<script>
+    // Toggle password visibility
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+
+    togglePassword.addEventListener("click", () => {
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+        togglePassword.textContent = type === "password" ? "👁️" : "🙈"; // Toggle icon based on visibility
+    });
+</script>
+
+
+
+</body>
+</html>

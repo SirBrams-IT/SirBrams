@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>SirBrams Tech</title>
+
+     <style>
+    #carousel{
+      box-shadow:10px 8px 8px 10px #0a53be;
+    }
+    #h{
+        font-weight:bolder;
+    }
+    body{
+
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="header" class="header d-flex align-items-center sticky-top">
+       <a href="index.html">
+    <img src="Assets/Images/logo.png" alt="Logo">
+          <link rel="icon" href="Assets/Images/logo.png">
+</a>
+
+    <div class="container-fluid container-xl position-relative d-flex align-items-center pb-2">
+
+
+     <nav id="navmenu" class="navmenu">
+         <a href="index.html" class="menu"> <h1>SirBrams Tech campus</h1></a>
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Courses.html">Courses</a>
+            <a href="events.html">Events</a>
+            <a href="learning.html">Learning</a>
+            <a href="contact.html">Contact</a>
+           <label for="search"class="text-success active">Search</label>
+            <input id="search" type="text" placeholder="Search...">
+
+         <a href="Reg.html" class="btn btn-outline-success">Register </a>
+         <a href="login.html" class="btn btn-outline-primary">Login</a>
+           </nav>
+        </div>
+    </header>
+
+<div class="container p-4 m-auto bg-info col-md-9 col-lg-6">
+
+  <form action="" method="post" class=" text-secondary">
+  <div class="container d-flex justify-content-center align-items-center">
+    <img src="Assets/Images/logo.png" alt="Logo" class="img-fluid">
+</div>
+
+    <legend class="text-center"> CREATE AN ACCOUNT!</legend>
+    <br>
+
+
+  <label for="fname" class="form-label">Full Name:</label>
+  <input type="text" class="form-control" id="fname" placeholder="Enter your full name" required="required">
+  <label for="email" class="form-label"></label>Email:
+  <input type="email" id="email" class="form-control" placeholder="Enter your Email" required="required">
+  <label for="pnumber" class="form-label"></label>Phone Number:
+  <input type="number"  class="form-control" id="pnumber" placeholder="e.g 0710101010" required="required">
+
+    <label for="idno" class="form-label"></label>ID NO:
+  <input type="number"  class="form-control" id="idno" placeholder="Enter your Id number" required="required">
+
+
+ <label for="nationality" class="form-label">Select Nationality</label>
+    <select name="" id="nationality">
+        <option value="" disabled="disabled">--Choose One--</option>
+        <option value="">Dutch</option>
+        <option value="">German</option>
+        <option value="">Italian</option>
+        <option value="">Kenyan</option>
+         <option value="">Ugandan</option>
+    </select><br><br>
+
+
+    <label for="age" class="form-label"> Age:</label>
+  <input type="date" id="age" placeholder="Enter your Age" required="required"><br>
+
+      <label class="form-label"> Choose Gender: </label> <br>
+<input type="radio" id="male" name="gender">
+<label for="male">Male</label><br>
+
+<input type="radio" id="fmale" name="gender">
+<label for="fmale">Female</label><br>
+
+<input type="radio" id="other" name="gender">
+<label for="other">Other</label><br>
+
+<!-- Password Field -->
+<label for="password" class="form-label">Password:</label>
+<div class="input-group">
+    <input type="password" class="form-control" id="password" placeholder="Type password" required="required">
+    <span class="input-group-text" id="togglePassword">
+        👁️
+    </span>
+</div>
+<small id="password-strength" class="text-muted"></small><br>
+
+<!-- Confirm Password Field -->
+<label for="c_password" class="form-label">Confirm Password:</label>
+<input type="password" id="c_password" class="form-control" placeholder="Confirm password" required="required">
+
+<script>
+    // Password strength checker
+    const passwordInput = document.getElementById("password");
+    const passwordStrength = document.getElementById("password-strength");
+
+    passwordInput.addEventListener("input", () => {
+        const password = passwordInput.value;
+        let strength = "Weak";
+        let color = "red";
+
+        if (password.length >= 8 && /[a-zA-Z]/.test(password) && /\d/.test(password)) {
+            strength = "Fair";
+            color = "orange";
+        }
+        if (password.length >= 8 && /[a-zA-Z]/.test(password) && /\d/.test(password) && /[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            strength = "Strong (Recommended)";
+            color = "green";
+        }
+
+        passwordStrength.textContent = `Strength: ${strength}`;
+        passwordStrength.style.color = color;
+    });
+
+    // Toggle password visibility
+    const togglePassword = document.getElementById("togglePassword");
+    togglePassword.addEventListener("click", () => {
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+        togglePassword.textContent = type === "password" ? "👁️" : "👁️"; // Toggle icon if needed
+    });
+</script>
+
+
+    <div class="">
+    <button type="submit" class="mt-4 btn btn-outline-success " >Register</button>
+    </div>
+ <div class="d-flex justify-content-end">
+    <a href="login.html" class="mt-4 text-decoration-none">Click to login</a>
+</div>
+
+</form>
+</div>
+
+
+</body>
+</html>
